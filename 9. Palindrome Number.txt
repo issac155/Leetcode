@@ -1,0 +1,15 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+          String val = Integer.toString(x);
+          return val.equals(new StringBuilder(val).reverse().toString());
+    }
+}
+
+
+....................................note................
+
+*first conver it into the string
+
+*check it equal
+
+*StringBuilder it is used to edit the string then reverse and check it the convert it into string
