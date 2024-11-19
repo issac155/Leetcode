@@ -1,0 +1,33 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> Map = new HashMap<>();
+
+        for (int i=0;i< nums.length;i++){
+           int ans = target - nums[i];
+
+            if(Map.containsKey(ans)){
+                return new int [] {Map.get(ans),i};
+            }
+            Map.put(nums[i],i);
+
+
+            
+        }
+throw new IllegalArgumentException("Not Found");
+    }
+}
+
+
+......................Notes...........................
+
+*Create an for loop 
+
+*substract the taget values with value in the array
+
+*Use hashmap(it store withkey/value)
+
+*Check the value found or not in the hashmap
+
+*if it found get the value with the get method
+
+* IllegalArgumentException(error handling )
