@@ -1,0 +1,49 @@
+class Solution {
+    public int romanToInt(String s) {
+
+        HashMap<Character , Integer> hc = new HashMap<>();
+
+        hc.put('I',1);
+        hc.put('V',5);
+        hc.put('X',10);
+        hc.put('L',50);
+        hc.put('C',100);
+        hc.put('D',500);
+        hc.put('M',1000);
+
+        int result = 0;
+        int rev = 0;
+
+        for(int i = s.length()-1;i >=0 ;i--){
+            char si = s.charAt(i); // Get the current character
+                    int value = hc.get(si);
+
+                    if(value<rev){
+                        result -= value;
+
+                    }else{
+                        result+=value;
+
+                    }
+
+                    rev = value;
+
+
+
+        }
+        
+                        return result;
+
+        
+    };
+}
+
+
+
+.................................................Note..............................................................
+
+*Use hash map add the value 
+
+*Compare the value with another compare from the last value
+
+*If it is greater the value you check with the previous (LVIII,50>5=> add it ) other wise substract
