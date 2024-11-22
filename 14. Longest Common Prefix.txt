@@ -1,0 +1,39 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if(strs == null||strs.length == 0){
+            return "";
+        }
+        String prefix = strs[0];
+        
+        for (int i = 1; i< strs.length; i++){
+            while(!strs[i].startsWith(prefix)){
+                prefix = prefix.substring(0,prefix.length()-1);
+
+                if(prefix == null){
+                    return null;
+
+                }
+
+            }
+        }
+        return prefix;
+        
+        
+    }
+}
+
+
+
+...........................Note.............................
+
+* here the first step check it is null or empty
+
+*take this as string variable in prefix
+
+*then run an loop from 1 position then create while loop check it not equal(!strs[1]) execute
+
+*after that update the prefix using the substring method in java in remove the last value of the string and update in the same variable
+
+*check one more in the while loop if the prefix is null 
+
+*last step return the prefix
