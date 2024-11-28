@@ -1,0 +1,29 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int count = 0;
+        for (int i=0; i<nums.length; i++){
+            if((i<nums.length-1)&&(nums[i] == nums[i+1])){
+                continue;
+            }else{
+                nums[count]=nums[i];
+                count++;
+            }
+        }
+        return count;
+        
+    }
+}
+
+
+
+
+..................................Note.......................................
+
+* here i check an edge case 
+
+* use loop for 
+
+* check i value not be greater than length of an array && check the current one with next one if it(true) continue
+
+*if else work the update the count and add the value in the array
+
