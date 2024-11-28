@@ -1,0 +1,24 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+
+        int k = 0;
+
+        for (int i = 0 ; i < nums.length ; i++){
+
+            if(nums[i] != val){
+                nums[k] = nums[i];
+                k++;
+            }
+
+        }
+        return k;
+        
+    }
+}
+
+
+...................Note............................
+
+* here the val not equal that will be added in the array 
+
+*here i use k for update the array 
