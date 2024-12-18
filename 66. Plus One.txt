@@ -1,0 +1,33 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+
+        for ( int i = digits.length-1 ; i >=0; i--){
+            
+            if(digits[i] < 9){
+                digits[i]++;
+                return digits;
+
+            }
+            digits[i] = 0;
+
+        }
+        
+            int [] result = new int[digits.length+1];
+            result[0]=1;
+            return result;
+            
+    }
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Note>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+using loop reverse to solve this 
+
+first condition check it is less than 9 if it is less than 9 the add ++
+
+if it is not less that 9 last digit will be == 0 
+
+the condtion is (9) create an new array using the length of digits after that set that first as [1]
+
+then result will be return 
