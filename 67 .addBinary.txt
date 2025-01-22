@@ -1,0 +1,38 @@
+class Solution {
+    public String addBinary(String a, String b) {
+        int carry = 0, i = a.length()-1,j = b.length()-1;
+        StringBuilder  result = new StringBuilder();
+        
+        while(i >= 0 || j >= 0 || carry != 0){
+            int digitA = (i>=0) ? a.charAt(i)-'0':0;
+            int digitB = (j>=0) ? b.charAt(j)-'0':0;
+
+            int sum = digitA+digitB+carry;
+
+            result.append(sum%2);
+
+            carry = sum/2;
+
+            i--;
+            j--;
+
+
+        }
+           return result.reverse().toString();
+
+        
+    }
+}
+
+
+......................Note...............................
+
+mistake i make the spelling in StringBuilder and revers(), digitA = 0 --->in last
+
+first create an StringBuilder in result as 
+
+declare the value in a variable int 
+
+check while loop <=0 , in the clculate sum using % ---------> reminder ,the carry using /--->quo
+
+after close the loop declare the result 
