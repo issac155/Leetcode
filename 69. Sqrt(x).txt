@@ -1,0 +1,41 @@
+class Solution {
+    public int mySqrt(int x) {
+        int right = x, left = 0, result =0;
+
+        if (x < 2) return x;
+
+        while(left <= right){
+
+            int mid = left +(right-left)/2;
+
+            Long square = (long)mid*mid;
+
+            if(square == x){
+                return mid;
+
+            }else if(square < x){
+                result = mid;
+                left = mid + 1;
+
+            }else{
+
+                right = mid  - 1;
+
+            }
+
+        }
+        return result;
+        
+    }
+}
+
+
+.....................Note.........
+
+using binary search method 
+
+find mid then square lrl/2
+
+first check it is same or not then it great after that result = mid in the smae condition more in mid +1 in left 
+
+then mid - 1 in right 
