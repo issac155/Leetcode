@@ -1,0 +1,47 @@
+class Solution {
+    public int climbStairs(int n) {
+        if (n <= 2) return n;  // Base cases: if n is 1 or 2, return n directly
+
+        int a = 1, b = 2;  // a stores ways(1) = 1, b stores ways(2) = 2
+        for (int i = 3; i <= n; i++) {
+            int temp = a + b;  // temp holds the value of ways(i) based on the recurrence relation
+            a = b;  // move a to b (ways(i-2) becomes ways(i-1))
+            b = temp;  // move b to temp (ways(i-1) becomes ways(i))
+        }
+        return b;  // return the value for ways(n)
+    }
+}
+
+......................Note......................
+
+
+
+ways(n)=ways(n−1)+ways(n−2)
+
+
+Let’s say n = 5:
+
+Initial values:
+
+a = 1, b = 2 (since ways(1) = 1 and ways(2) = 2).
+Iteration 1 (i = 3):
+
+temp = a + b = 1 + 2 = 3 (ways(3) = ways(2) + ways(1)).
+Update a = b = 2 (ways(2) becomes ways(3-1)).
+Update b = temp = 3 (ways(3) becomes ways(3)).
+Iteration 2 (i = 4):
+
+temp = a + b = 2 + 3 = 5 (ways(4) = ways(3) + ways(2)).
+Update a = b = 3 (ways(3) becomes ways(4-1)).
+Update b = temp = 5 (ways(4) becomes ways(4)).
+Iteration 3 (i = 5):
+
+temp = a + b = 3 + 5 = 8 (ways(5) = ways(4) + ways(3)).
+Update a = b = 5 (ways(4) becomes ways(5-1)).
+Update b = temp = 8 (ways(5) becomes ways(5)).
+Return value:
+
+After the loop finishes, b = 8, which is the total number of ways to reach step 5.
+Thus, the function returns 8 for n = 5.
+
+
