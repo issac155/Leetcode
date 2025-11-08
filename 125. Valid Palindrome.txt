@@ -1,0 +1,46 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        if (s == null) return true;
+
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+            // skip non-alphanumeric characters from left
+            if (!Character.isLetterOrDigit(s.charAt(left))) {
+                left++;
+                continue;
+            }
+
+            // skip non-alphanumeric characters from right
+            if (!Character.isLetterOrDigit(s.charAt(right))) {
+                right--;
+                continue;
+            }
+
+            // compare lowercase characters
+            char a = Character.toLowerCase(s.charAt(left));
+            char b = Character.toLowerCase(s.charAt(right));
+
+            if (a != b) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+}
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+take length 
+
+check it is alphabetic or not
+
+left,right
+
+convert to lower case check that 
